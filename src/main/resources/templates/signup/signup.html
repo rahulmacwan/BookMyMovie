@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" th="http://www.thymeleaf.org" xmlns:>
+<html Lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body style="background-color:rgb(228, 227, 156);">
+
+<div class="wrapper fadeInDown">
+  <div id="formContent" style="height: 100vh;" class="vh-100 d-flex flex-column align-items-center justify-content-center">
+    <!-- Tabs Titles -->
+
+
+    <!-- Login Form -->
+    <form method="post" class="d-flex flex-column mx-auto w-50">
+    <h1 style="text-align: center">Sign up</h1> <br>
+      <input type="email" id="email" class="form-control fadeIn second" name="email" required placeholder="email" th:name="email">
+      <input type="text" id="username" class="form-control fadeIn third" name="username" required placeholder="username" th:name="username">
+      <input type="password" id="password" class="form-control fadeIn third" name="password" required placeholder="password" th:name="password">
+      <input type="text" id="question1" class="form-control fadeIn third" name="question1" required placeholder="What is your favorite Movie?" th:name="question1">
+      <input type="text" id="question2" class="form-control fadeIn third" name="question2" required placeholder="Who is your favorite Actor?" th:name="question2">
+      
+      <button class="btn btn-primary fadeIn fourth mt-2" type="submit">Submit</button>
+    </form>
+
+    <!-- Remind Passowrd -->
+ 
+      <a class="underlineHover" href="/resetPassword">Forgot Password?</a>
+
+  </div>
+</div>
+</a>
+</body>
+</html>

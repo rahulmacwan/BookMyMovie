@@ -1,0 +1,23 @@
+server:
+  port: 8990
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: CSCI5308_9_DEVINT_USER
+    url: jdbc:mysql://db-5308.cs.dal.ca:3306/CSCI5308_9_DEVINT?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    password: ED3wtquJ6P
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+logging:
+  level:
+    org:
+      hibernate: INFO
+      springframework:
+        web: DEBUG

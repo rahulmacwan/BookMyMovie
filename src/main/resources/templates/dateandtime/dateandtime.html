@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" th="http://www.thymeleaf.org" xmlns:>
+
+<html Lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+<body style="background-color:rgb(228, 227, 156);">
+<table class="mx-auto">
+<thead>
+<tr>
+    <th><h1 style="text-align: center">Show timings</h1> <br>
+</tr>
+</th> </thead>
+<br>
+
+<tbody>
+<div class="container">
+<tr th:each="dateandtime : ${dateandtime}">
+	<div class="list-group">
+    <td><span th:text="${dateandtime.date}"></span></td><br>
+    <td><span th:text="${dateandtime.time}"></span></td><br>
+
+    <td>
+        <a th:href="@{/seat/seatselection/{tid}/{mid}/{sid}(tid=${dateandtime.theaterid},mid=${dateandtime.movieid},sid=${dateandtime.showid})}">
+            <button class="btn btn-primary fadeIn fourth mt-2"> Book Movie</button>
+        </a></td><br>
+
+    </div>
+</tr>
+</div>
+</tbody>
+
+</body>
+
+</html>

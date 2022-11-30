@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" th="http://www.thymeleaf.org" xmlns:>
+<html Lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+ <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body style="background-color:rgb(228, 227, 156);">
+<table>
+<thead>
+
+<tr>
+<th>Username:</th>
+<th>Email:</th>
+<th>Rewards:</th>
+</tr>
+</thead>
+<tbody>
+<div class="container">
+<tr>
+	<div class="list-group">
+    <td><span th:text="${UserModel.username}">User Name  </span></td>
+    <br>
+    <td><span th:text="${UserModel.email}">email </span></td>
+    <br>
+    <td><span th:text="${UserModel.rewards}">rewards </span></td>
+    <br>
+    </div>
+</tr>
+</div>
+</tbody>
+
+<a href="/home">
+    <button class="btn btn-primary fadeIn fourth mt-2" type="submit">Go Back</button>
+</a>
+</body>
+</html>

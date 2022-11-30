@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" th="http://www.thymeleaf.org" xmlns:>
+
+<html Lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+<body style="background-color:rgb(228, 227, 156);">
+<table class="mx-auto">
+<thead>
+<tr>
+    <th> <h1 style="text-align: center">Upcoming Movies</h1> <br>
+</tr>
+</th> </thead>
+<br>
+
+<tbody>
+<div class="container">
+<tr th:each="upcomingmovie : ${upcomingmovielist}">
+
+	<div class="list-group">
+    <td><span th:text="${upcomingmovie.movieName}">  </span></td>
+	</div>
+</tr>
+<div>
+</tbody>
+<a href="/movielocation/location">
+    <button class="btn btn-primary fadeIn fourth mt-2"> Go Back</button>
+</a> <br> <br> <br>
+</table>
+</body>
+
+</html>

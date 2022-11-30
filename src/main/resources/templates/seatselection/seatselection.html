@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" th="http://www.thymeleaf.org" xmlns:>
+<html Lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <style>
+    .seat {
+  background-color: #444451;
+  height: 26px;
+  width: 32px;
+  margin: 3px;
+  font-size: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+tbody	, tr {
+  border: 1px solid black;
+}
+    </style>
+</head>
+<body style="background-color:rgb(228, 227, 156);">
+
+
+<!--<form action="#" th:action="@{/seat/booking}" th:object="${seatlist}" method="post">
+-->
+<form action="#" method="post" th:action="@{/seat/booking}" th:object="${seatlist}">
+
+    <p>
+		
+        <tbody >
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <tr class="seat">
+        	 <div class="btn-group mr-2" role="group" aria-label="First group">
+            <label>
+                <th:block th:each="seats : ${seatselectionModelList}">
+                
+                    <td th:if="${seats.flag == 1}"><input disabled name="seatselection" th:checked="${seats.flag}"
+                                                          th:value="${seats.seat}" type="checkbox"/>
+                        <label th:text="${seats.seat}"></label></td>
+
+                    <td th:if="${seats.flag == 0}"><input name="seatselection" th:checked="${seats.flag}" th:field="*{list}"
+                                                          th:value="${seats}" type="checkbox"/>
+                        <label th:text="${seats.seat}"></label></td>
+                 
+                </th:block>
+            </label>
+        	 </div>
+        </tr>
+        </div>
+
+        </tbody>
+		
+         <div >
+        <input id="submitButton" th:value="Save" type="submit" class="btn btn-primary fadeIn fourth mt-2">
+         </div>
+    </p>
+</form>
+
+
+</body>
+</html>

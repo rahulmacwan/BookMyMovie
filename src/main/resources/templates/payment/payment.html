@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" th="http://www.thymeleaf.org" xmlns:>
+<html Lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body style="background-color:rgb(228, 227, 156);">
+
+<div class="wrapper fadeInDown">
+  <div id="formContent" style="height: 100vh;" class="vh-100 d-flex flex-column align-items-center justify-content-center">
+    <!-- Tabs Titles -->
+
+
+    <!-- Login Form -->
+    <form method="post" action="#" class="d-flex flex-column mx-auto w-50" th:action="@{/payment}" th:object="${paymentModel}">
+     <h1 style="text-align: center">Payment</h1> <br>
+      <input type="text" id="cname" class="form-control fadeIn second" name="cardname" required placeholder="Name of cardholder">
+      <input type="text" id="ccnum" class="form-control fadeIn third" name="creditcard" required placeholder="Card number">
+      <input type="text" id="expmonth" class="form-control fadeIn third" name="expiryMonth" required placeholder="Expiry month" >
+      <input type="text" id="expYear" class="form-control fadeIn third" name="expiryYear" required placeholder="Expiry Year" >
+      <input type="text" id="cvv" class="form-control fadeIn third" name="cvv" required placeholder="CVV">
+      
+      <input id="rewards" name="rewards" placeholder="4" readonly th:value="${rewardsamount}" type="text">
+            <a th:href="@{/rewards/{amount}/{userid}(amount=${bookingmodel.amount},userid=${bookingmodel.userId})}">Claim
+                Rewards</a><br>
+            <label for="amount">Amount</label>
+            <input id="amount" name="amount" placeholder="352" readonly th:value="${bookingmodel.amount}" type="text">
+     
+      
+      
+      <button class="btn btn-primary fadeIn fourth mt-2" type="submit">Pay</button>
+    </form>
+
+    <!-- Remind Passowrd -->
+
+  </div>
+</div>
+
+</body>
+</html>
